@@ -1,4 +1,4 @@
-val scalatest = "org.scalatest" %% "scalatest" % "3.0.0"
+val scalatest = "org.scalatest" %% "scalatest" % "3.2.19"
 
 lazy val root = (project in file(".")).
   enablePlugins(SonatypePublish).
@@ -6,7 +6,7 @@ lazy val root = (project in file(".")).
     inThisBuild(List(
       organization := "org.scala-sbt",
       licenses += "Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.html"),
-      scalaVersion := "2.11.8",
+      scalaVersion := "2.13.16",
       organizationHomepage := Some(url("http://scala-sbt.org/")),
       homepage := Some(url("https://github.com/sbt/template-resolver")),
       scmInfo := Some(ScmInfo(url("https://github.com/sbt/template-resolver"), "git@github.com:sbt/template-resolver")),
@@ -17,13 +17,13 @@ lazy val root = (project in file(".")).
     )),
 
     name := "template-resolver",
-    version := "0.1",
+    version := "0.2-SNAPSHOT",
     libraryDependencies ++= Seq(scalatest % Test),
 
     // disable using the Scala version in output paths and artifacts
     crossPaths := false,
     autoScalaLibrary := false,
     publishMavenStyle := true,
-    publishArtifact in Test := false,
+    Test / publishArtifact := false,
     pomIncludeRepository := { _ => false }
   )
