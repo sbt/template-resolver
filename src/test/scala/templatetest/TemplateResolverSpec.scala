@@ -16,10 +16,10 @@
 
 package templatetest
 
-import org.scalatest._
+import org.scalatest.flatspec.AnyFlatSpec
 import sbt.template.TemplateResolver
 
-class TemplateResolverSpec extends FlatSpec {
+class TemplateResolverSpec extends AnyFlatSpec {
   "resolver" should "check if it supports the given argument" in {
     assert(resolver.isDefined(Array("--xx", "foo/bar")) == true)
   }
